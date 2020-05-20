@@ -8,14 +8,14 @@ export default class Item extends Koc {
         const ko = this.ko()
 
         this.vm = {
-            checked: ko.observable()
+            checked: data.completed
             .watch(nv => this.vm.css.set(nv ? 'checked' : null)),
             remove: () => {
                 this._remove()
             },
-            css: ko.observable()
+            css: ko.observable(data.completed.get() ? 'checked' : null)
         }
-        this.vm.checked.set(data.completed)
+        
         this.html`
         <wl-card data-bind="css: css">
             <span>${data.todo}</span>

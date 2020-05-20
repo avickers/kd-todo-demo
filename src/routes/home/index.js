@@ -24,13 +24,13 @@ export default class Home extends Koc {
         this.vm = {
             feed: ko.observableArray([{ 
                 todo: 'Step 1: Steal underwear',
-                completed: true
+                completed: ko.observable(true)
             }, {
                 todo: 'Step 2:',
-                completed: false
+                completed: ko.observable(false)
             }, {
                 todo: 'Step 3: Profit',
-                completed: false
+                completed: ko.observable(false)
             }])
             .emptyTemplate(Empty)
             .template(Item),
@@ -39,7 +39,8 @@ export default class Home extends Koc {
             addTodo: () => {
                 if(this.vm.todo.get())
                 this.vm.feed.push({
-                    todo: this.vm.todo.get()
+                    todo: this.vm.todo.get(),
+                    completed: ko.observable(false)
                 })
                 this.vm.todo.set()
             }

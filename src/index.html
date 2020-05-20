@@ -31,7 +31,7 @@
                 background:lightgray;
                 width: 70%;
             }
-            #sidebar a {
+            a {
                 text-decoration: none;
             }
         </style>
@@ -45,7 +45,9 @@
             </div>
             <h1 slot="title">Over-stylized Todo list</h1>
             <div slot="right">
-                <wl-button flat inverted>Github <wl-icon>open_in_new</wl-icon></wl-button>
+                <a href="https://github.com/avickers/kd-todo-demo" target="_blank" rel="noopener noreferrer">
+                    <wl-button flat inverted>Github <wl-icon>open_in_new</wl-icon></wl-button>
+                </a>
             </div>
         </wl-nav>
         <div id="sidebar" class="collapsed">
